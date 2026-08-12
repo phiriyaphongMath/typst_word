@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Typst for Word</title>
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; padding: 10px; }
+        textarea { width: 100%; height: 100px; margin-bottom: 10px; font-family: monospace; }
+        button { background-color: #0078d4; color: white; border: none; padding: 8px 12px; cursor: pointer; border-radius: 4px; margin-bottom: 5px; width: 100%; }
+        button:hover { background-color: #005a9e; }
+        button:disabled { background-color: #c8c8c8; cursor: not-allowed; }
+        .settings-panel { background: #f3f2f1; padding: 10px; margin-top: 20px; border-radius: 5px; }
+        .settings-panel label { display: block; margin-bottom: 5px; font-size: 13px; }
+        .settings-panel input { width: 100%; margin-bottom: 10px; padding: 5px; box-sizing: border-box; }
+        .btn-update { background-color: #107c41; }
+        .btn-update:hover { background-color: #0b5a2f; }
+        #loading-container { display: none; margin-top: 15px; }
+        #progress-bar-bg { width: 100%; background: #e0e0e0; border-radius: 4px; margin-top: 5px; }
+        #progress-bar { width: 0%; height: 8px; background: #0078d4; border-radius: 4px; transition: width 0.3s; }
+    </style>
+  <script type="module" crossorigin src="/pptypst/assets/powerpoint-DqycLoSA.js"></script>
+</head>
+<body>
+    <h3>Typst Equation</h3>
+    <textarea id="typst-code" placeholder="Enter typst code here... e.g. $ x = y^2 $"></textarea>
+    <button id="btn-insert">Insert / Update Selected</button>
+
+    <div class="settings-panel">
+        <h4>Global Formatting</h4>
+        <label>Font Family:
+            <input type="text" id="global-font" value="New Computer Modern">
+        </label>
+        <label>Font Size (pt):
+            <input type="number" id="global-size" value="12">
+        </label>
+        <label>Baseline Drop (pt):
+            <input type="number" id="baseline-drop" value="-4">
+        </label>
+        
+        <button id="btn-update-all" class="btn-update">Update ALL Equations</button>
+        
+        <div id="loading-container">
+            <span id="progress-text" style="font-size: 12px;">Initializing...</span>
+            <div id="progress-bar-bg">
+                <div id="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- บรรทัดนี้แหละครับที่เชื่อมเข้าสู่ระบบแพ็กไฟล์ของ Vite! -->
+</body>
+</html>
